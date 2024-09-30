@@ -31,9 +31,12 @@ public:
 using CirclePtr = shared_ptr<Circle>;
 using Collection = vector<CirclePtr>;
 
-bool areaLessThan20(CirclePtr s) {
+// bool areaLessThan20(CirclePtr s) {
+//     return (s && s->getArea() < 20);
+// }
+auto areaLessThan20 = [](CirclePtr s) {
     return (s && s->getArea() < 20);
-}
+};
 
 void printCollection(const Collection& collection) {
     for (const auto & it : collection) {
