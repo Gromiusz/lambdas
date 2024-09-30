@@ -20,3 +20,10 @@ void schedule(std::function<void(std::string, int)> func, std::chrono::seconds t
     std::this_thread::sleep_for(time);
     func(str, param);
 }
+
+template <typename Func, typename... Args>
+void schedule(Func func, std::chrono::seconds time, Args... args)
+{
+    std::this_thread::sleep_for(time);
+    func(args...);
+}
